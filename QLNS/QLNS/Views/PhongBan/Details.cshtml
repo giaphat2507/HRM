@@ -1,0 +1,31 @@
+﻿@model QLNS.Models.PhongBan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="textCenter" style="margin-bottom:24px">Chi Tiết Phòng Ban</h2>
+
+<table class="table table-bordered table-hover">
+    <tr class="info">
+        <th>
+            @Html.DisplayNameFor(model => model.MaPhongBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenPhongBan)
+        </th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayFor(model => model.MaPhongBan)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.TenPhongBan)
+        </th>
+    </tr>
+</table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {id=Model.MaPhongBan.Trim() }, "") |
+    @Html.ActionLink("Back to List", "Index")
+</p>

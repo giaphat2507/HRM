@@ -31,9 +31,26 @@ namespace QLNS.Controllers
         [HttpPost]
         public ActionResult Create(User user)
         {
-            database.Users.Add(user);
-            database.SaveChanges();
-            return RedirectToAction("Index", "User");
+            //database.Users.Add(user);
+            //database.SaveChanges();
+            //return RedirectToAction("Index", "User");
+            if (ModelState.IsValid)
+            {
+                var check = database.Users.Where(s => s.UserName == user.UserName).FirstOrDefault();
+                if (check == null)
+                {
+                    database.Configuration.ValidateOnSaveEnabled = false;
+                    database.Users.Add(user);
+                    database.SaveChanges();
+                    return RedirectToAction("Index","User");
+                }
+                else
+                {
+                    ViewBag.Error = "Tài khoản này đã có";
+                    return View();
+                }
+            }
+            return View();
         }
         public ActionResult Details(int id)
         {
@@ -55,7 +72,7 @@ namespace QLNS.Controllers
             return View(database.Users.Where(s => s.Id == id).FirstOrDefault());
         }
         [HttpPost]
-        public ActionResult Delete(User user,int id)
+        public ActionResult Delete(User user, int id)
         {
             try
             {

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLyNhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLyNhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChamCong">
           <Key>
             <PropertyRef Name="MaNV" />
@@ -40,8 +40,8 @@
           </Key>
           <Property Name="MaHopDong" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="LoaiHopDong" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="NgayBatDau" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="NgayKetThuc" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="NgayBatDau" Type="date" Nullable="false" />
+          <Property Name="NgayKetThuc" Type="date" Nullable="false" />
           <Property Name="GhiChu" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="KhenThuong">
@@ -298,8 +298,7 @@
             <End Role="ThoiViec" EntitySet="ThoiViec" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLyNhanSuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -342,8 +341,8 @@
           </Key>
           <Property Name="MaHopDong" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="LoaiHopDong" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="NgayBatDau" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="NgayKetThuc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NgayBatDau" Type="DateTime" Nullable="false" />
+          <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_HopDong" FromRole="HopDong" ToRole="NhanVien" />
         </EntityType>

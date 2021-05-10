@@ -80,4 +80,3 @@ D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.csproj.CoreCompileInputs.cache
 D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.csproj.CopyComplete
 D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.dll
 D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.pdb
-D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.csprojAssemblyReference.cache

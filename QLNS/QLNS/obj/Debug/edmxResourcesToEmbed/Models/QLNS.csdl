@@ -39,8 +39,8 @@
     </Key>
     <Property Name="MaHopDong" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="LoaiHopDong" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="NgayBatDau" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="NgayKetThuc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NgayBatDau" Type="DateTime" Nullable="false" />
+    <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" />
     <Property Name="GhiChu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_HopDong" FromRole="HopDong" ToRole="NhanVien" />
   </EntityType>

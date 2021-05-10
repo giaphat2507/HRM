@@ -11,6 +11,9 @@ body{
     padding:0;
     margin:0;
 }
+.mGb-8{
+    margin-bottom:8px !important;
+}
 /* header */
 .header{
     display:flex;
@@ -173,4 +176,15 @@ nav ul li a:hover i{
 }
 .user-btn-search {
 
+}
+/*Canh giữa form thêm/xóa/sửa form*/
+.textCenter{
+    text-align:center;
+}
+/*login hello*/
+.hello-login {
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 15px;
 }

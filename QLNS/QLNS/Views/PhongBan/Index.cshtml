@@ -1,0 +1,49 @@
+﻿@model IEnumerable<QLNS.Models.PhongBan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="textCenter">Danh Sách Phòng Ban</h2>
+
+<a href="@Url.Action("Create","PhongBan")" class="btn btn-primary user-btn-them">Thêm mới tài khoản</a>
+@using (Html.BeginForm("Index", "PhongBan", FormMethod.Get))
+{
+    <div style="margin-bottom:15px;">
+        <input type="text" name="_name" class="user-input-search" placeholder="Nhập phòng ban cần tìm ..." />
+        <button type="submit" class="btn btn-info"><i class="fa fa-search"></i></button>
+    </div>
+    <table class="table table-bordered table-hover">
+
+
+        <tr class="info">
+            <th>
+                @Html.DisplayNameFor(model => model.MaPhongBan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenPhongBan)
+
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaPhongBan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenPhongBan)
+                </td>
+                <td class="textCenter">
+                    <a class="btn btn-warning " href="@Url.Action("Edit",new { id=item.MaPhongBan.Trim()})">Edit</a>
+                    <a class="btn btn-danger " href="@Url.Action("Details",new { id=item.MaPhongBan.Trim()})">Details</a>
+                    <a class="btn btn-primary " href="@Url.Action("Delete",new { id=item.MaPhongBan.Trim()})">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+}

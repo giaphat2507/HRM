@@ -25,7 +25,7 @@
                             <tr>
                                 @*<td class="text">@Html.LabelFor(m=>m.UserName)</td>*@
                                 <td class="text">@Html.EditorFor(m => m.UserName, new { htmlAttributes = new { placeholder = "Tài Khoản" } })</td>
-                                
+
                             </tr>
                             <tr>
                                 <td class="color--red">@Html.ValidationMessageFor(m => m.UserName)</td>
@@ -33,26 +33,28 @@
                             <tr>
                                 @*<td class="text">@Html.LabelFor(m=>m.UserName)</td>*@
                                 <td class="text">@Html.EditorFor(m => m.PassWord, new { htmlAttributes = new { placeholder = "Mật Khẩu" } })</td>
-                                
-                               
+
+
                             </tr>
                             <tr>
                                 <td class="color--red">@Html.ValidationMessageFor(m => m.PassWord)</td>
-                              
+                                @*@if (ViewBag.Error != null)
+                                {
+                                    @ViewBag.Error
+                                }*@
                             </tr>
+                           
                             <tr>
                                 <td class="color--red">
-                                    @if (ViewBag.Error == null)
+                                    @if (ViewBag.Error != null)
                                     {
-                                        <p>@ViewBag.Error</p>
-                                        
+                                        @ViewBag.Error
                                     }
-
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" >
-                                <button class="btn " type="submit" >Đăng Nhập</button>
+                                <td colspan="2">
+                                    <button class="btn " type="submit">Đăng Nhập</button>
                                 </td>
                             </tr>
                         </table>

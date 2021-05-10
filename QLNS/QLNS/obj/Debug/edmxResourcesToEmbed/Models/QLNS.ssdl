@@ -35,8 +35,8 @@
     </Key>
     <Property Name="MaHopDong" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="LoaiHopDong" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="NgayBatDau" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="NgayKetThuc" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="NgayBatDau" Type="date" Nullable="false" />
+    <Property Name="NgayKetThuc" Type="date" Nullable="false" />
     <Property Name="GhiChu" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="KhenThuong">

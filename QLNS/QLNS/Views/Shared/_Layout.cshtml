@@ -17,8 +17,28 @@
             <a href="#">Fecth</a>
         </div>
         <div class="header-right">
-            <a ><i class="far fa-user-circle"></i>@Html.ActionLink("Đăng Nhập", "Login","Account")</a>
-            <a href="#"><i class="fas fa-sign-out-alt"></i>Thoát</a>
+            @*<span class="hello-login">
+                @if (Session["UserName"] == null)
+                {
+
+                }
+                else
+                {
+                    <span><text> Hi </text>@Session["UserName"]</span>
+                }
+            </span>*@
+            @*<a><i class="far fa-user-circle"></i>@Html.ActionLink("Đăng Nhập", "Login", "Account")</a>*@
+            @*<a href="#"><i class="fas fa-sign-out-alt"></i>Thoát</a>*@
+            @if (User.Identity.IsAuthenticated)
+            {
+                <span class="hello-login">Hi -@User.Identity.Name</span>
+                <a href="@Url.Action("Logout","Account")"><i class="fas fa-sign-out-alt"></i>Thoát</a>
+            }
+            else
+            {
+                <a><i class="far fa-user-circle"></i>@Html.ActionLink("Đăng Nhập", "Login", "Account")</a>
+            }
+
         </div>
     </header>
     <nav class="sidebar nav">
@@ -44,8 +64,8 @@
                         <li>
                             <a href="#" class="qlpb-btn"><span class="fas fa-toolbox icon-qlnv"></span>Quản lý phòng ban<i class='fas fa-caret-down second'></i></a>
                             <ul class="qlpb-show">
-                                <li><a href="#">Danh sách phòng ban</a></li>
-                                <li><a href="#">Danh sách chức vụ</a></li>
+                                <li><a href="@Url.Action("Index","PhongBan")">Danh sách phòng ban</a></li>
+                                <li><a href="@Url.Action("Index","ChucVu")">Danh sách chức vụ</a></li>
 
                             </ul>
                         </li>
